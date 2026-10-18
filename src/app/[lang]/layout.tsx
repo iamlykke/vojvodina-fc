@@ -8,6 +8,8 @@ import { fontClassName } from '@/lib/fonts';
 import { getNav } from '@/lib/nav';
 import '@/styles/globals.css';
 
+const OG_LOCALE = { lat: 'sr_RS', cir: 'sr_RS', en: 'en_US' } as const;
+
 export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
 }
@@ -17,8 +19,17 @@ export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Prom
   if (!isLang(lang)) return {};
   const t = getDictionary(lang);
   return {
-    title: { default: t.metaTitle, template: `%s · FK Vojvodina` },
+    title: { default: t.metaTitle, template: `%s · ${t.metaTitleSuffix}` },
     description: t.metaDescription,
+    applicationName: t.siteName,
+    openGraph: {
+      type: 'website',
+      siteName: t.siteName,
+      title: t.metaTitle,
+      description: t.metaDescription,
+      locale: OG_LOCALE[lang],
+    },
+    twitter: { card: 'summary', title: t.metaTitle, description: t.metaDescription },
     alternates: { languages: { 'sr-Latn': '/lat', 'sr-Cyrl': '/cir', en: '/en' } },
   };
 }

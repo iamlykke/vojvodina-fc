@@ -2,12 +2,14 @@ import { LANG_INDEX, type Lang, type Tri } from './i18n';
 
 /** UI strings. Every entry exists in all three versions: [lat, cir, en]. */
 const DICT = {
-  metaTitle: ['FK Vojvodina — zvanični sajt', 'ФК Војводина — званични сајт', 'FK Vojvodina — official website'],
+  metaTitle: ['FK Vojvodina — nezvanični navijački sajt', 'ФК Војводина — незванични навијачки сајт', 'FK Vojvodina — unofficial fan site'],
+  metaTitleSuffix: ['FK Vojvodina (nezvanično)', 'ФК Војводина (незванично)', 'FK Vojvodina (unofficial)'],
   metaDescription: [
-    'Zvanični sajt Fudbalskog kluba Vojvodina, Novi Sad, osnovan 1914. Utakmice, ulaznice, tabela, vesti i šop.',
-    'Званични сајт Фудбалског клуба Војводина, Нови Сад, основан 1914. Утакмице, улазнице, табела, вести и шоп.',
-    'Official website of FK Vojvodina, Novi Sad, founded 1914. Matches, tickets, table, news and shop.',
+    'Nezvanični navijački sajt o FK Vojvodina iz Novog Sada (osnovan 1914): utakmice, tabela, vesti. Nije povezan sa klubom.',
+    'Незванични навијачки сајт о ФК Војводина из Новог Сада (основан 1914): утакмице, табела, вести. Није повезан са клубом.',
+    'Unofficial fan site about FK Vojvodina, Novi Sad (founded 1914): matches, table, news. Not affiliated with the club.',
   ],
+  siteName: ['FK Vojvodina — nezvanični sajt', 'ФК Војводина — незванични сајт', 'FK Vojvodina — unofficial site'],
   wordmarkSub: ['NOVI SAD · 1914', 'НОВИ САД · 1914', 'NOVI SAD · 1914'],
   skipToContent: ['Preskoči na sadržaj', 'Прескочи на садржај', 'Skip to content'],
   account: ['Moj nalog', 'Мој налог', 'My account'],
@@ -60,10 +62,18 @@ const DICT = {
   backHome: ['Na početnu', 'На почетну', 'Back to home'],
   maybeLooking: ['Možda tražite', 'Можда тражите', 'You may be looking for'],
 
-  copyright: ['© 1914–2026 Fudbalski klub Vojvodina', '© 1914–2026 Фудбалски клуб Војводина', '© 1914–2026 Football Club Vojvodina'],
+  footerAbout: [
+    'Nezvanični navijački projekat o FK Vojvodina: utakmice, tabela i vesti na jednom mestu.',
+    'Незванични навијачки пројекат о ФК Војводина: утакмице, табела и вести на једном месту.',
+    'An unofficial fan project about FK Vojvodina: matches, table and news in one place.',
+  ],
+  disclaimer: [
+    '© 2026 · Nije povezan sa FK Vojvodina niti ga klub podržava.',
+    '© 2026 · Није повезан са ФК Војводина нити га клуб подржава.',
+    '© 2026 · Not affiliated with or endorsed by FK Vojvodina.',
+  ],
   partners: ['Pokrovitelji i partneri', 'Покровитељи и партнери', 'Sponsors & partners'],
   privacy: ['Politika privatnosti', 'Политика приватности', 'Privacy policy'],
-  address: ['Dimitrija Tucovića 1|21000 Novi Sad', 'Димитрија Туцовића 1|21000 Нови Сад', 'Dimitrija Tucovića 1|21000 Novi Sad, Serbia'],
 } as const satisfies Record<string, Tri>;
 
 export type DictKey = keyof typeof DICT;
