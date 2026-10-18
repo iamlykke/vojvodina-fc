@@ -1,0 +1,62 @@
+.card { display: block; color: var(--text-primary); }
+.card:hover { color: var(--text-primary); }
+
+.media { position: relative; overflow: hidden; }
+.media img { object-fit: cover; }
+
+.title {
+  margin-top: 6px;
+  text-wrap: pretty;
+  text-decoration: underline transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--dur-base) var(--ease-out);
+}
+.card:hover .title { text-decoration-color: currentColor; }
+
+.meta { display: flex; gap: 10px; font-size: 13px; line-height: 1.45; color: var(--text-secondary); }
+
+.excerpt { font: var(--type-body); color: var(--text-body); margin-top: 10px; }
+
+/* lead */
+.lead .body { margin-top: 18px; }
+.lead .meta { gap: 12px; }
+.lead .title { font: 700 38px/1.05 var(--font-display); }
+
+/* grid */
+.grid .body { margin-top: 14px; }
+.grid .title { font: var(--type-h4); }
+
+/* row */
+.row {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 20px;
+  padding-bottom: 22px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.row .title { font: 700 23px/1.1 var(--font-display); }
+.row .media { padding: 8px; }
+
+/* overlay */
+.overlay { position: relative; color: #fff; }
+.overlay:hover { color: #fff; }
+.overlayText { position: absolute; left: 0; right: 0; bottom: 0; padding: 120px var(--gutter) 44px; background: var(--photo-protect); }
+.overlay .title { font: 800 68px/.95 var(--font-display); margin-top: 16px; max-width: 760px; }
+.overlayDate { display: block; margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.75); }
+
+@media (max-width: 599px) {
+  .lead .media { aspect-ratio: 16/10 !important; }
+  .lead .body { margin-top: 12px; }
+  .lead .title { font-size: 25px; line-height: 1.08; margin-top: 2px; }
+  .lead .meta time { display: none; }
+  .lead .meta { font-size: 12px; }
+
+  .row { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 14px 0; margin: 0; }
+  .row .media { aspect-ratio: 1 !important; }
+  .row .media span { display: none; }
+  .row .meta { font-size: 12px; }
+  .row .meta > :first-child { display: none; }
+  .row .title { font-size: 18px; margin-top: 2px; }
+}

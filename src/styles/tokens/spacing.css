@@ -1,0 +1,12 @@
+:root{
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px; --space-6:24px;
+  --space-7:28px; --space-8:32px; --space-10:40px; --space-12:48px; --space-14:56px; --space-16:64px; --space-18:72px;
+  --container:1440px;
+  --gutter:48px;         /* desktop page padding */
+  --gutter-mobile:16px;  /* mobile page padding */
+  --section-gap:64px;    /* between home sections */
+  --header-utility-h:32px;
+  --header-main-h:76px;
+  --header-mobile-h:60px;
+  --hit-min:44px;
+}

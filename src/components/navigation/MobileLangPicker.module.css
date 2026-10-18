@@ -1,0 +1,47 @@
+.root { position: relative; display: none; }
+
+@media (max-width: 1099px) {
+  .root { display: block; }
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 4px;
+  background: none;
+  border: 0;
+  color: rgba(255,255,255,.75);
+  font: 600 12px/1 var(--font-body);
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.trigger:hover, .trigger[aria-expanded="true"] { color: #fff; }
+
+/* Same 5px CSS chevron as the desktop nav */
+.chevron {
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid rgba(255,255,255,.5);
+  border-bottom: 1.5px solid rgba(255,255,255,.5);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.chevron[data-open] { transform: rotate(-135deg) translate(-1px, -1px); }
+
+.popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 40;
+  padding: 8px;
+  background: var(--surface-inverse-raised);
+  box-shadow: var(--shadow-panel);
+}
+.popover[hidden] { display: none; }
+
+/* Bigger tap targets than the desktop utility chips */
+.popover a { padding: 12px 14px; font-size: 13px; }

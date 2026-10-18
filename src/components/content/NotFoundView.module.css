@@ -1,0 +1,67 @@
+.hero { background: var(--surface-inverse); color: #fff; }
+.heroInner { padding-top: 36px; padding-bottom: 64px; }
+
+.crumb { font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.55); }
+.crumb a { color: inherit; }
+.crumb a:hover { color: #fff; }
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 48px;
+  align-items: end;
+  margin-top: 14px;
+}
+
+/* Shirt-number style figure (PlayerCard: 900, red on ink) */
+.code {
+  font: 900 clamp(120px, 18vw, 240px)/.8 var(--font-display);
+  color: var(--voj-red);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.01em;
+}
+.title {
+  margin-top: 20px;
+  font: 800 clamp(48px, 8vw, 96px)/.9 var(--font-display);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.text { font-size: 17px; line-height: 1.55; color: var(--text-on-inverse-muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+/* Suggestions on paper */
+.more { padding-top: 64px; padding-bottom: 64px; }
+.moreTitle {
+  font: 800 30px/1 var(--font-display);
+  padding-bottom: 12px;
+  border-bottom: var(--rule-strong);
+}
+.links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; }
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 64px;
+  border-bottom: 1px solid var(--border-subtle);
+  font: var(--type-h4);
+  color: var(--text-primary);
+}
+.link > span:last-child { color: var(--voj-red); }
+.link:hover { color: var(--text-primary); }
+.link:hover > span:first-child { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+@media (max-width: 899px) {
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 599px) {
+  .heroInner { padding-top: 24px; padding-bottom: 36px; }
+  .title { margin-top: 12px; }
+  .actions > * { flex: 1 1 100%; }
+  .more { padding-top: 36px; padding-bottom: 48px; }
+  .links { grid-template-columns: minmax(0, 1fr); }
+  .link { min-height: 56px; font-size: 21px; }
+}

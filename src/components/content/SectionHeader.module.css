@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.title { font: var(--type-h1); text-transform: uppercase; }
+.small .title { font: 800 30px/1 var(--font-display); }
+
+.rule { border-bottom: var(--rule-strong); padding-bottom: 12px; }
+.rule .title { text-transform: none; }
+
+.meta { font-size: 14px; color: var(--text-secondary); }
+.link { font-weight: 600; white-space: nowrap; }
+.short { display: none; }
+
+@media (max-width: 599px) {
+  .header { margin-bottom: 12px; }
+  .title { font-size: 30px; }
+  .link { font-size: 14px; }
+  .long { display: none; }
+  .short { display: inline; }
+}

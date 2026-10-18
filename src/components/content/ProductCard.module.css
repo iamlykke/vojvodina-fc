@@ -1,0 +1,36 @@
+.card { display: block; background: var(--surface-card); color: var(--text-primary); }
+.card:hover { color: var(--text-primary); }
+
+.media { position: relative; aspect-ratio: 1; }
+.media img { object-fit: cover; }
+
+/* Lighter hatch on white cards (mockup) */
+.ph { padding: 12px; font-size: 11px; background: repeating-linear-gradient(135deg, var(--voj-paper-2) 0 10px, var(--voj-paper) 10px 20px); }
+
+.tag { font: 600 11px/1.3 var(--font-body); color: var(--voj-red); margin-left: auto; }
+.media .tag { position: absolute; right: 12px; bottom: 12px; }
+
+.body {
+  padding: 16px 18px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.name {
+  font-weight: 500;
+  text-decoration: underline transparent;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--dur-base) var(--ease-out);
+}
+.card:hover .name { text-decoration-color: currentColor; }
+.price { font: 700 19px/1.2 var(--font-display); white-space: nowrap; }
+
+@media (max-width: 599px) {
+  .ph { padding: 8px; font-size: 10px; }
+  .ph .tag { display: none; }
+  .body { display: block; padding: 10px 12px; }
+  .name { display: block; font-size: 13px; line-height: 1.4; }
+  .price { display: block; font-size: 17px; margin-top: 2px; }
+}

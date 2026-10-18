@@ -1,0 +1,45 @@
+.footer {
+  background: var(--surface-inverse);
+  color: rgba(255,255,255,.75);
+  font-size: 14px;
+}
+.footer a { color: inherit; }
+.footer a:hover { color: #fff; }
+
+.stripes { height: 10px; background: var(--stripes-m); }
+
+.inner { padding-top: 48px; padding-bottom: 28px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 260px repeat(8, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.wordmark { font: 800 22px/1.2 var(--font-display); color: #fff; }
+.contact address { margin-top: 10px; font-style: normal; line-height: 1.6; }
+
+.groupTitle { display: block; color: #fff !important; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.grid li { font-size: 13px; line-height: 1.4; margin-bottom: 7px; }
+
+.bottom {
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-inverse);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+}
+
+@media (max-width: 1199px) {
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 32px; }
+  .contact { grid-column: 1 / -1; }
+}
+
+@media (max-width: 599px) {
+  .inner { padding-top: 36px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid li a { display: inline-block; padding: 4px 0; }
+  .bottom { flex-direction: column; }
+}

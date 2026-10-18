@@ -1,0 +1,90 @@
+/* ---------- band ----------
+ * Every line stays on one line (any script). Cells share the width equally while they fit;
+ * when they don't (mid widths, longer Cyrillic names, phones) the band scrolls sideways.
+ */
+.bandWrap { background: var(--voj-red); color: #fff; }
+
+.bandGrid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+.bandGrid::-webkit-scrollbar { display: none; }
+
+.last {
+  flex: 0 0 auto;
+  min-width: 320px;
+  padding: 22px 28px 22px var(--gutter);
+  background: var(--voj-red-700);
+  scroll-snap-align: start;
+}
+.lastLabel { font-size: 12px; line-height: 1.45; letter-spacing: .12em; opacity: .8; text-transform: uppercase; white-space: nowrap; }
+.lastResult { font: 800 30px/1.2 var(--font-display); margin-top: 4px; white-space: nowrap; }
+.form { display: flex; margin-top: 8px; }
+.short { display: none; }
+
+.list { display: flex; flex: 1 0 auto; }
+
+.band {
+  flex: 1 0 0;
+  min-width: max-content;
+  padding: 22px 28px;
+  border-left: 1px solid rgba(255,255,255,.2);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  scroll-snap-align: start;
+}
+.bandDate { font-family: var(--font-display); text-align: center; line-height: 1; flex: none; }
+.bandDay { font-weight: 800; font-size: 30px; }
+.bandTime { font-size: 12px; letter-spacing: .12em; opacity: .8; margin-top: 3px; white-space: nowrap; }
+.bandComp { font-size: 12px; line-height: 1.45; letter-spacing: .06em; opacity: .8; white-space: nowrap; }
+.bandMatch { font: 700 22px/1.2 var(--font-display); white-space: nowrap; }
+.bandVenue { font-size: 12px; line-height: 1.45; opacity: .8; white-space: nowrap; }
+.bandCompact { display: none; }
+
+/* Laptops: tighten so all four cells still fit without scrolling */
+@media (max-width: 1439px) {
+  .last { min-width: 280px; padding-right: 24px; }
+  .band { padding: 22px 20px; gap: 14px; }
+  .bandMatch { font-size: 20px; }
+}
+
+@media (max-width: 1199px) {
+  .last { min-width: 0; padding-right: 24px; }
+  .lastResult { font-size: 26px; }
+  .band { padding: 20px 24px; gap: 14px; }
+  .bandDay { font-size: 26px; }
+  .bandMatch { font-size: 20px; }
+}
+
+@media (max-width: 599px) {
+  .last { padding: 14px 16px; }
+  .lastLabel { font-size: 11px; letter-spacing: .1em; }
+  .lastResult { font-size: 20px; margin-top: 0; }
+  .long, .form { display: none; }
+  .short { display: inline; }
+  .band { padding: 14px 16px; }
+  .bandDate, .bandBody { display: none; }
+  .bandCompact { display: block; }
+  .bandCompactMeta { font-size: 11px; line-height: 1.45; letter-spacing: .1em; opacity: .8; }
+  .bandCompactMatch { font: 700 17px/1.2 var(--font-display); white-space: nowrap; }
+}
+
+/* ---------- row (schedule list) ---------- */
+.row {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.rowDate { font-family: var(--font-display); line-height: 1; }
+.rowDay { font-weight: 800; font-size: 32px; }
+.rowTime { font-size: 12px; letter-spacing: .1em; color: var(--text-secondary); margin-top: 3px; }
+.rowMeta { font-size: 13px; color: var(--text-secondary); }
+.rowMatch { font: var(--type-h4); }

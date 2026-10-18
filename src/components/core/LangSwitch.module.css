@@ -1,0 +1,24 @@
+.switch { display: flex; gap: 2px; }
+
+.chip {
+  padding: 3px 8px;
+  border-radius: var(--radius-chip);
+  font: 600 12px/1.45 var(--font-body);
+  letter-spacing: .06em;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.dark .chip { color: rgba(255,255,255,.7); }
+.dark .chip:hover { color: #fff; }
+.dark .chip.on { background: var(--voj-red); color: #fff; }
+.dark .chip:focus-visible { outline-color: #fff; }
+
+.light .chip { color: var(--text-secondary); }
+.light .chip:hover { color: var(--text-primary); }
+.light .chip.on { background: var(--voj-ink); color: #fff; }
+
+/* Full-width row in the mobile menu */
+.l { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.l .chip { padding: 11px 0; border-radius: 0; font-size: 13px; text-align: center; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+.l.dark .chip { color: var(--text-on-inverse-muted); }

@@ -1,0 +1,19 @@
+.guide { display: inline-flex; gap: 4px; }
+
+.badge {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 11px/1 var(--font-body);
+}
+
+.win { background: var(--result-win-bg); color: var(--result-win-fg); }
+.draw { background: var(--result-draw-bg); color: var(--result-draw-fg); }
+.loss { background: var(--result-loss-bg); color: var(--result-loss-fg); }
+
+.onAccent { background: var(--result-on-accent-bg); }
+.onAccent.win { color: var(--result-win-on-accent); }
+.onAccent.draw { color: var(--result-draw-on-accent); }
+.onAccent.loss { color: var(--result-loss-on-accent); }

@@ -1,0 +1,22 @@
+:root{
+  /* Corners: the brand is square. Only tiny language chips get 3px. */
+  --radius-0:0;
+  --radius-chip:3px;
+  --radius-crest:3px 3px 50% 50%;
+  /* Shadows: only for floating layers */
+  --shadow-panel:0 30px 60px rgba(0,0,0,.5);
+  --shadow-float:0 20px 50px rgba(21,19,20,.25);
+  --shadow-menu-light:0 24px 40px rgba(21,19,20,.12);
+  /* Signature stripes (dres) */
+  --stripes-s:repeating-linear-gradient(90deg,var(--voj-red) 0 7px,#fff 7px 14px);
+  --stripes-m:repeating-linear-gradient(90deg,var(--voj-red) 0 40px,#fff 40px 80px);
+  --stripes-l:repeating-linear-gradient(90deg,var(--voj-red) 0 64px,#fff 64px 128px);
+  --stripes-ghost:repeating-linear-gradient(90deg,rgba(255,255,255,.12) 0 30px,transparent 30px 60px);
+  /* Protection gradient on photos */
+  --photo-protect:linear-gradient(transparent,rgba(21,19,20,.85));
+  /* Motion */
+  --ease-out:cubic-bezier(.2,.7,.2,1);
+  --dur-fast:120ms; --dur-base:200ms; --dur-panel:240ms;
+  --rule-accent:3px solid var(--voj-red);
+  --rule-strong:3px solid var(--voj-ink);
+}

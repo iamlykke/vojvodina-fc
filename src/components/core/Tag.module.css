@@ -1,0 +1,14 @@
+.text { color: var(--text-accent); font: 600 13px/1.45 var(--font-body); }
+
+.solid {
+  display: inline-block;
+  background: var(--voj-red);
+  color: #fff;
+  padding: 5px 10px;
+  font: var(--type-micro);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.chip { display: inline-block; background: var(--surface-card); padding: 7px 12px; font: var(--type-small); }

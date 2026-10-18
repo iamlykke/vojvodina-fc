@@ -1,0 +1,63 @@
+:root{
+  /* Brand */
+  --voj-red:#C8102E;
+  --voj-red-700:#A50D26;
+  --voj-red-800:#9E0C24;
+  --voj-white:#FFFFFF;
+  /* Ink (warm black) */
+  --voj-ink:#151314;
+  --voj-ink-2:#1E1B1C;
+  --voj-ink-3:#2A2627;
+  --voj-ink-4:#231F20;
+  /* Paper (warm neutrals) */
+  --voj-paper:#F5F3EF;
+  --voj-paper-2:#ECE8E2;
+  --voj-paper-3:#E4DFD8;
+  --voj-paper-4:#D9D4CE;
+  /* Text greys */
+  --voj-grey-700:#2B2728;
+  --voj-grey-600:#3D3936;
+  --voj-grey-500:#5F5A57;
+  --voj-grey-400:#6B655F;
+  --voj-grey-300:#A8A09B;
+
+  /* Semantic — surfaces */
+  --surface-page:var(--voj-paper);
+  --surface-card:var(--voj-white);
+  --surface-sunken:var(--voj-paper-2);
+  --surface-inverse:var(--voj-ink);
+  --surface-inverse-raised:var(--voj-ink-2);
+  --surface-accent:var(--voj-red);
+  --surface-accent-deep:var(--voj-red-700);
+  /* Semantic — text */
+  --text-primary:var(--voj-ink);
+  --text-body:var(--voj-grey-700);
+  --text-secondary:var(--voj-grey-500);
+  --text-on-inverse:#FFFFFF;
+  --text-on-inverse-2:rgba(255,255,255,.82);
+  --text-on-inverse-muted:rgba(255,255,255,.65);
+  --text-on-accent:#FFFFFF;
+  --text-accent:var(--voj-red);
+  /* Semantic — lines */
+  --border-subtle:rgba(21,19,20,.12);
+  --border-strong:var(--voj-ink);
+  --border-inverse:rgba(255,255,255,.12);
+  --border-inverse-strong:rgba(255,255,255,.4);
+  /* Interaction */
+  --accent:var(--voj-red);
+  --accent-hover:var(--voj-red-700);
+  --accent-press:var(--voj-red-800);
+  --link:var(--voj-red);
+  --link-hover:var(--voj-red-800);
+  --overlay-scrim:rgba(10,9,9,.55);
+  /* Match results (P pobeda / N nerešeno / I izgubljeno) */
+  --voj-green:#1F8A4C;
+  --result-win-bg:var(--voj-green);  --result-win-fg:#FFFFFF;
+  --result-draw-bg:var(--voj-paper-4); --result-draw-fg:var(--voj-ink);
+  --result-loss-bg:var(--voj-red);   --result-loss-fg:#FFFFFF; --result-loss-border:transparent;
+  /* on red surfaces (fixture band, Vojvodina table row): white square, coloured letter */
+  --result-on-accent-bg:#FFFFFF; --result-win-on-accent:var(--voj-green); --result-draw-on-accent:var(--voj-grey-500); --result-loss-on-accent:var(--voj-red);
+  /* Placeholder imagery */
+  --ph-light:repeating-linear-gradient(135deg,var(--voj-paper-3) 0 10px,var(--voj-paper-2) 10px 20px);
+  --ph-dark:repeating-linear-gradient(135deg,var(--voj-ink-3) 0 10px,var(--voj-ink-4) 10px 20px);
+}

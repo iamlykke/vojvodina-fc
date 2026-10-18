@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design handoff / brand book (local reference only)
+/design_handoff_fkvojvodina_nextjs/
+
+# agent skills
+/.claude/skills/
+/skills-lock.json

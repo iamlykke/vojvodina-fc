@@ -1,0 +1,138 @@
+.header {
+  position: relative;
+  z-index: 30;
+  background: var(--surface-inverse);
+  color: #fff;
+}
+
+/* Utility row */
+.utility {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 8px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255,255,255,.7);
+}
+.utilityLinks { display: flex; gap: 24px; }
+.utilityLinks a { color: inherit; }
+.utilityLinks a:hover { color: #fff; }
+
+/* Main bar */
+.mainRule {
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.main {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  height: var(--header-main-h);
+}
+
+.brand { display: flex; align-items: center; gap: 14px; color: #fff; flex: none; }
+.brand:hover { color: #fff; }
+.crest { height: 46px; width: auto; }
+.wordmark { display: flex; flex-direction: column; font-family: var(--font-display); line-height: 1; }
+.wordmarkName { font-weight: 800; font-size: 22px; letter-spacing: .02em; }
+.wordmarkSub { font-size: 12px; letter-spacing: .14em; color: rgba(255,255,255,.6); margin-top: 3px; }
+
+.nav {
+  display: flex;
+  gap: 28px;
+  flex: 1;
+  align-self: stretch;
+  min-width: 0;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0 0;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  color: #fff;
+  font: var(--type-nav);
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.navItem[data-active] { border-bottom-color: var(--voj-red); }
+.navItem:focus-visible { outline-offset: -2px; }
+.chevron {
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid rgba(255,255,255,.5);
+  border-bottom: 1.5px solid rgba(255,255,255,.5);
+  transform: rotate(45deg) translateY(-2px);
+}
+
+/* Header CTA: 12/22 padding, 17px (mockup) */
+.cta { min-height: 0; padding: 12px 22px; font-size: 17px; line-height: 1; flex: none; }
+
+.burger { display: none; }
+
+/* Mega-menu panel */
+.panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out), visibility 0s linear var(--dur-base);
+}
+.panel[data-open] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: var(--overlay-scrim);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur-base) var(--ease-out), visibility 0s linear var(--dur-base);
+}
+.scrim[data-open] { opacity: 1; visibility: visible; transition-delay: 0s; }
+
+@media (max-width: 1279px) {
+  .main { gap: 28px; }
+  .nav { gap: 20px; }
+  .socials { display: none; }
+}
+
+/* Burger below 1100 */
+@media (max-width: 1099px) {
+  .utility, .nav, .cta, .panel, .scrim { display: none; }
+  .mainRule { border-top: 0; }
+  .main { height: var(--header-mobile-h); gap: 12px; }
+  .brand { flex: 1; }
+  .wordmarkName { font-size: 19px; }
+  .wordmarkSub { display: none; }
+  .crest { height: 34px; }
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    margin-right: -12px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .burger span { width: 20px; height: 2px; background: #fff; }
+}

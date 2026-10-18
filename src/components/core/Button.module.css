@@ -1,0 +1,35 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 26px;
+  font: var(--type-button);
+  letter-spacing: var(--tracking-button);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.small { min-height: 40px; padding: 0 16px; font: var(--type-button-s); }
+.block { display: flex; width: 100%; }
+.button:disabled { opacity: .4; cursor: not-allowed; }
+
+.primary { background: var(--accent); color: var(--text-on-accent); border: 1.5px solid var(--accent); }
+.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--text-on-accent); }
+.primary:active { background: var(--accent-press); border-color: var(--accent-press); }
+
+.inverse { background: #fff; color: var(--voj-red); border: 1.5px solid #fff; }
+.inverse:hover { background: var(--voj-paper); color: var(--voj-red); }
+.inverse:active { color: var(--accent-press); }
+
+.outline { background: transparent; color: var(--text-primary); border: 1.5px solid var(--border-strong); }
+.outline:hover { color: var(--text-primary); border-color: var(--text-primary); }
+
+.outline-inverse { background: transparent; color: #fff; border: 1.5px solid var(--border-inverse-strong); }
+.outline-inverse:hover { color: #fff; border-color: #fff; }
+.outline-inverse:focus-visible { outline-color: #fff; }
